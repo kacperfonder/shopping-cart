@@ -11,39 +11,58 @@
   <div class='wrapper'>
 
     <section class='header'>
-      <div class='logo'><img src="img/logo.png" alt="logo" /></div>
-      <div class='cart'><img src="img/ico_cart.png" alt="ico_cart"></div>
+      <div class='logo'>
+        <img src="img/logo.png" alt="logo" />
+      </div>
+      <div class='cart'>
+        <img src="img/ico_cart.png" alt="ico_cart">
+        <ul class='cartItem'>
+
+        </ul>
+      </div>
     </section>
 
     <section class='main'>
       <div class='game-of-week'>
-        <h1>GAMES OF THE WEEK</h1>
-        <a href="#"><img src="img/game_spot.png" alt="witcher" /></a>
+        <h1>GAME OF THE WEEK</h1>
+        <a href="#">
+          <img src="img/game_spot.png" alt="witcher" />
+        </a>
       </div>
     </section>
 
     <section class='footer'>
       <div class='games'>
-        <div>
-          <img src="img/game_1.png" alt="game1" data-price='9.99 €' data-name="ODDWORLD: STRANGER'S WRATH">
-          <p>ODDWORLD: STRANGER'S WRATH"</p>
-        </div>
-        <div>
-          <img src="img/game_2.png" alt="game2" data-price='19.99 €' data-name="CHAOS ON DEPONIA">
-          <p>CHAOS ON DEPONIA</p>
-        </div>
-        <div>
-          <img src="img/game_3.png" alt="game3" data-price='29.99 €' data-name="THE SETTLERS 2: GOLD EDITION">
-          <p>THE SETTLERS 2: GOLD EDITION</p>
-        </div>
-        <div>
-          <img src="img/game_4.png" alt="game4" data-price='19.99 €' data-name="NEVERWINTER NIGHTS">
-          <p>NEVERWINTER NIGHTS</p>
-        </div>
-        <div>
-          <img src="img/game_5.png" alt="game5" data-price='39.99 €' data-name="ASSASIN'S CREED: DIRECTOR'S CUT">
-          <p>ASSASIN'S CREED: DIRECTOR'S CUT</p>
-        </div>
+        <ul class="gameList">
+          <li id='games' data-price='9.99 €' data-name="ODDWORLD: STRANGER'S WRATH">
+            <img src="img/game_1.png" id='game1' alt="game1">
+            <p id='gameName'></p>
+            <button class='gameBtn'></button>
+          </li>
+
+          <li id='games' data-price='19.99 €' data-name="CHAOS ON DEPONIA">
+            <img src="img/game_2.png" id="game2" alt="game2">
+            <p id='gameName'></p>
+            <button class='gameBtn'></button>
+          </li>
+          <li id='games' data-price='29.99 €' data-name="THE SETTLERS 2: GOLD EDITION">
+            <img src="img/game_3.png" id="game3" alt="game3">
+            <p id='gameName'></p>
+            <button class='gameBtn'></button>
+          </li>
+          <li id='games' data-price='19.99 €' data-name="NEVERWINTER NIGHTS">
+            <img src="img/game_4.png" id="game4" alt="game4">
+            <p id='gameName'></p>
+            <button class='gameBtn'></button>
+          </li>
+
+          <li id='games' data-price='39.99 €' data-name="ASSASIN'S CREED: DIRECTOR'S CUT">
+            <img src="img/game_5.png" id="gamr5" alt="game5">
+            <p id='gameName'></p>
+            <button class='gameBtn'></button>
+          </li>
+
+        </ul>
       </div>
     </section>
   </div>
