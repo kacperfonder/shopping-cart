@@ -7,7 +7,7 @@ const cart = {
 
     generateBtns () {
         for (let i=0; i<this.myBtns.length; i++ ){
-            this.myBtns[i].innerHTML = this.myLi[i].dataset.price + ' €';
+            this.myBtns[i].innerHTML = '$ ' + this.myLi[i].dataset.price;
         }
         for (let i=0; i<this.myP.length; i++ ){
             this.myP[i].innerHTML = this.myLi[i].dataset.name;
@@ -16,24 +16,21 @@ const cart = {
     },
  
     btnsOnClick () { 
-        // let self = this
         this.myBtns.forEach(element => {
             element.addEventListener('click', () => {
-
+             
+                const close = element.closest('li');
                 const cartCreate = document.createElement('li');
-                // const cartName = element.dataset.name
-                const cartName = this.myLi['0'].dataset.name
+                const imgCreate = document.createElement('img')
+                imgCreate.src = close.dataset.src
+                const cartName = close.dataset.name
+                const cartPrice = close.dataset.price
+                console.log(close.dataset.name);
                 this.elemCart.appendChild(cartCreate)
-                console.log(cartName);
+                this.elemCart.appendChild(imgCreate)
+                cartCreate.innerText = cartName + ' $ ' + cartPrice 
                 
-                cartCreate.innerText = cartName
-                // cartCreate.innerText = this.myLi.dataset
-
-               
-                
-
-               
- 
+              
             });
         });  
     },
