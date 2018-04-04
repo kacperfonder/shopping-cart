@@ -4,6 +4,7 @@ const cart = {
     myLi: document.querySelectorAll('#games'),
     myP: document.querySelectorAll('#gameName'),
     myBtns: document.querySelectorAll('.gameBtn'),
+    
 
     generateBtns () {
         for (let i=0; i<this.myBtns.length; i++ ){
@@ -14,6 +15,14 @@ const cart = {
         }
      
     },
+    removeBtn () {
+        const removeBtn = document.querySelectorAll('.remove');
+            removeBtn.forEach(element => {
+                element.addEventListener('click', () => {
+                    
+                })
+            })
+    },
  
     btnsOnClick () { 
         this.myBtns.forEach(element => {
@@ -21,15 +30,22 @@ const cart = {
              
                 const close = element.closest('li');
                 const cartCreate = document.createElement('li');
-                const imgCreate = document.createElement('img')
-                imgCreate.src = close.dataset.src
+                const imgCreate = document.createElement('img');
+                const cartPrice = document.createElement('p');
+                const removeBtn = document.createElement('button');
+                removeBtn.classList.add('remove')
                 const cartName = close.dataset.name
-                const cartPrice = close.dataset.price
-                console.log(close.dataset.name);
+                const price = close.dataset.price
+                imgCreate.src = close.dataset.src
+
+
+                this.elemCart.appendChild(removeBtn)
+                this.elemCart.appendChild(cartPrice)
                 this.elemCart.appendChild(cartCreate)
                 this.elemCart.appendChild(imgCreate)
-                cartCreate.innerText = cartName + ' $ ' + cartPrice 
-                
+                cartPrice.innerText = ' $ ' + price 
+                cartCreate.innerText = cartName 
+                removeBtn.innerText = 'remove'
               
             });
         });  
