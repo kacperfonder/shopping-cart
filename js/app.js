@@ -1,10 +1,12 @@
 const cart = {
+
     elemGameList: document.querySelector('.gameList'),
     elemCart: document.querySelector('.cartItem'),
     myLi: document.querySelectorAll('#games'),
     myP: document.querySelectorAll('#gameName'),
     myBtns: document.querySelectorAll('.gameBtn'),
-   
+    price: document.querySelector('.price'),
+ 
     
     generateBtns () {
         for (let i=0; i<this.myBtns.length; i++ ){
@@ -19,23 +21,39 @@ const cart = {
         removeBtn.forEach(element => {
             element.addEventListener('click', () => {
                 const ele = element.closest('li');
-                console.log('zaraz cie usune!');
                 ele.remove()
+                this.totalPrice();
+                this.buttonON()
             })
         })
     },
-    addingCartItems () {
-        const cartItem = this.elemCart.querySelectorAll('p')
-        const price = this.elemCart.querySelector('.price')
-        let sum = ''
-        
-        cartItem.forEach(element => {
-
-            sum += element;
-           
-            console.log(sum);
-            price.innerHTML = sum; 
+    buttonON () {
+        const buttons = this.elemGameList.querySelectorAll('button');
+        buttons.forEach(e => {
+            if(e.disabled = true) {
+                e.disabled = false;
+            }
         })
+    },
+   
+    clearCartBtn () {
+        this.elemCart.querySelector('button').addEventListener("click", () => {
+            const clearAll = this.elemCart.querySelectorAll('li')
+            this.price.innerText = ''
+            clearAll.forEach(element => {
+                element.remove();
+            })
+            this.buttonON();
+        })
+    },
+    totalPrice () {
+        const cartItem = this.elemCart.querySelectorAll('p')
+        let sum = 0;
+     
+        for (let i= 0; i<cartItem.length; i++) {       
+            sum += parseFloat(cartItem[i].innerHTML);
+            this.price.innerHTML = '$ ' + sum;
+        }
     },
     
     btnsOnClick () { 
@@ -49,33 +67,32 @@ const cart = {
                 const cartPrice = document.createElement('p');
                 const removeBtn = document.createElement('button');
 
-                const cartLi = cartCreate
-                const cartName = close.dataset.name
-                const price = close.dataset.price
-
-                cartPrice.innerText = price 
-                cartCreate.innerText = cartName 
+                const cartLi = cartCreate;
+                
+                cartPrice.innerText =  close.dataset.price
+                cartCreate.innerText = close.dataset.name;
                 removeBtn.innerText = 'remove'
                 removeBtn.classList.add('remove');
                 imgCreate.src = close.dataset.src
                 
-                console.log(cartLi); 
-
                 this.elemCart.appendChild(cartCreate)
                 cartLi.appendChild(removeBtn)
-                cartLi.appendChild(cartPrice)
                 cartLi.appendChild(imgCreate)
+                cartLi.appendChild(cartPrice) 
                 element.disabled = true;
+                if(element.disabled = true) {
+                    element.innerText = 'IN CART';
+                }
                 this.removeBtn();
-                this.addingCartItems();
+                this.totalPrice();
+                console.log(cartPrice);
             });
         });  
     },
     shoppingCart() {
         this.generateBtns();
         this.btnsOnClick();
-      
-       
+        this.clearCartBtn();
     },
 };
 cart.shoppingCart();
