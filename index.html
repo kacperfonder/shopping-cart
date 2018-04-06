@@ -5,33 +5,36 @@
   <meta charset="utf-8">
   <title>Javascript cart</title>
   <link rel='stylesheet' href='CSS/main.css'>
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:400,500,600,700" rel="stylesheet">
+
 </head>
 
 <body>
   <div class='wrapper'>
-
     <section class='header'>
-      <div class='logo'>
-        <img src="img/logo.png" alt="logo" />
-      </div>
-      <div class='cart'>
-        <img src="img/ico_cart.png" alt="ico_cart">
-        <ul class='cartItem'>
-              <span class='nr-in-cart'>items in cart</span>
-              <span class="price"></span>
-              <button>Clear cart</button>
-            
-        </ul>
+      <div class="wrap">
+        <div class='logo'>
+          <img src="img/logo.png" alt="logo"/>
+        </div>
+        <div class='cart'>
+          <img src="img/ico_cart.png" alt="ico_cart"><span class='counter'></span>
+     
+          <div class='invisible'>
+              <div class='cartInfo'> 
+                <p class='inCart'></p>
+                <span class="price"></span>
+                <button class="clearBtn">Clear cart</button>
+              </div>
+            <ul class='cartItem'>
+            </ul>
+          </div>   
+        </div>
       </div>
     </section>
 
     <section class='main'>
-      <div class='game-of-week'>
         <h1>GAME OF THE WEEK</h1>
-        <a href="#">
-          <img src="img/game_spot.png" alt="witcher" />
-        </a>
-      </div>
+      <div class="witcher"></div>
     </section>
 
     <section class='footer'>
@@ -40,31 +43,31 @@
           <li id='games' data-game='game1' data-src="img/game_1.png" data-price='9.99' data-name="ODDWORLD: STRANGER'S WRATH">
             <img src="img/game_1.png" alt="game1">
             <p id='gameName'></p>
-            <button class='gameBtn'  data-price='9.99' data-id="btn1"></button>
+            <button class='gameBtn'  data-btnprice='9.99' data-id="btn1"></button>
           </li>
 
           <li id='games' data-game='game2' data-src="img/game_2.png" data-price='19.99' data-name="CHAOS ON DEPONIA">
             <img src="img/game_2.png"  alt="game2">
             <p id='gameName'></p>
-            <button class='gameBtn' data-price='19.99' data-id="btn2"></button>
+            <button class='gameBtn' data-btnprice='19.99' data-id="btn2"></button>
           </li>
 
           <li id='games' data-game='game3' data-src="img/game_3.png" data-price='29.99' data-name="THE SETTLERS 2: GOLD EDITION">
             <img src="img/game_3.png"  alt="game3">
             <p id='gameName'></p>
-            <button class='gameBtn' data-price='29.99' data-id="btn3"></button>
+            <button class='gameBtn' data-btnprice='29.99' data-id="btn3"></button>
           </li>
 
           <li id='games' data-game='game4' data-src="img/game_4.png" data-price='19.99' data-name="NEVERWINTER NIGHTS">
             <img src="img/game_4.png"  alt="game4">
             <p id='gameName'></p>
-            <button class='gameBtn' data-price='19.99' data-id="btn4"></button>
+            <button class='gameBtn' data-btnprice='19.99' data-id="btn4"></button>
           </li>
 
           <li id='games' data-game='game5' data-src="img/game_5.png" data-price='39.99 ' data-name="ASSASIN'S CREED: DIRECTOR'S CUT">
             <img src="img/game_5.png" alt="game5">
             <p id='gameName'></p>
-            <button class='gameBtn' data-price='39.99 ' data-id="btn5"></button>
+            <button class='gameBtn' data-btnprice='39.99 ' data-id="btn5"></button>
           </li>
 
         </ul>
