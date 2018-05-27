@@ -7,7 +7,7 @@ const cart = {
     myBtns: document.querySelectorAll('.gameBtn'),
     price: document.querySelector('.price'),
     cartInfo: document.querySelector('.cartInfo'),
-    sum: 0,
+    sum: null,
 
     generateBtns() {
         for (let i = 0; i < this.myBtns.length; i++) {
